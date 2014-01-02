@@ -28,7 +28,7 @@ class WalletsController < ApplicationController
 
     respond_to do |format|
       if @wallet.save
-        format.html { redirect_to @wallet, notice: 'Thank you for your doantion.' }
+        format.html { redirect_to root_url, notice: 'Thank you for your donation.' }
         format.json { render action: 'show', status: :created, location: @wallet }
       else
         format.html { render action: 'new' }
