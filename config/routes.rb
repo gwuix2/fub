@@ -2,6 +2,8 @@ Fub::Application.routes.draw do
   resources :wallets
 
   root 'wallets#new'
+
+  get '*path' => redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
