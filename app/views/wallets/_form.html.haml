@@ -1,0 +1,17 @@
+= render 'shared/fedup'
+= render 'shared/address'
+%br/
+%dl.accordion{"data-accordion" => ""}
+  %dd
+    %a{href: "#panel2"} ... or upload your wallet file.
+    #panel2.content
+      .row
+        .large-9.large-centered.columns
+          = simple_form_for @wallet do |f|
+            = f.input :name, label: "Crypto currency"
+            = f.input :file, label: "Wallet file"
+            = f.input :pass, label: "Password*"
+            = f.submit "Send", class: "button"
+            %p.right
+              %small *if encrypted
+= render 'shared/promotions'
